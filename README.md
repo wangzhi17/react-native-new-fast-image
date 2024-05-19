@@ -65,7 +65,7 @@ and
 
 ## Usage
 
-**Note: You must be using React Native 0.60.0 or higher to use the most recent version of `react-native-fast-image-v2`.**
+**Note: You must be using React Native 0.60.0 or higher to use the most recent version of `react-native-new-fast-image`.**
 
 ```bash
 yarn add react-native-new-fast-image
