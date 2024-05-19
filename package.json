@@ -1,5 +1,5 @@
 {
-  "name": "react-native-fast-image-v2",
+  "name": "react-native-fast-image-view",
   "version": "8.6.4",
   "description": "🚩 FastImage, performant React Native image component.",
   "keywords": [
@@ -11,13 +11,13 @@
   ],
   "react-native": "index",
   "source": "index",
-  "homepage": "https://github.com/wangzhi17/react-native-fast-image-v2#readme",
+  "homepage": "https://github.com/wangzhi17/react-native-fast-image-view#readme",
   "bugs": {
-    "url": "https://github.com/wangzhi17/react-native-fast-image-v2/issues"
+    "url": "https://github.com/wangzhi17/react-native-fast-image-view/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wangzhi17/react-native-fast-image-v2.git"
+    "url": "https://github.com/wangzhi17/react-native-fast-image-view.git"
   },
   "license": "(MIT AND Apache-2.0)",
   "author": "Zhi Wang <wangzhi0114@163.com>",

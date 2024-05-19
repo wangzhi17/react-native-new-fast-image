@@ -6,15 +6,15 @@ fabric_enabled = ENV['RCT_NEW_ARCH_ENABLED'] == '1'
 Pod::Spec.new do |s|
   package = JSON.parse(File.read(File.join(__dir__, 'package.json')))
 
-  s.name          = "react-native-fast-image-v2"
+  s.name          = "react-native-fast-image-view"
   s.version       = package['version']
   s.summary       = package['description']
   s.authors       = { "Zhi Wang" => "wangzhi0114@163.com" }
-  s.homepage      = "https://github.com/wangzhi17/react-native-fast-image-v2#readme"
+  s.homepage      = "https://github.com/wangzhi17/react-native-fast-image-view#readme"
   s.license       = "MIT"
   s.requires_arc  = true
   s.framework     = 'UIKit'
-  s.source        = { :git => "https://github.com/wangzhi17/react-native-fast-image-v2.git", :tag => "v#{s.version}" }
+  s.source        = { :git => "https://github.com/wangzhi17/react-native-fast-image-view.git", :tag => "v#{s.version}" }
 
   if fabric_enabled
     folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
