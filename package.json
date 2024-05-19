@@ -1,0 +1,45 @@
+{
+  "name": "react-native-fast-image-v2",
+  "version": "8.6.4",
+  "description": "🚩 FastImage, performant React Native image component.",
+  "keywords": [
+    "cache",
+    "cached",
+    "fastimage",
+    "image",
+    "priority"
+  ],
+  "react-native": "index",
+  "source": "index",
+  "homepage": "https://github.com/wangzhi17/react-native-fast-image-v2#readme",
+  "bugs": {
+    "url": "https://github.com/wangzhi17/react-native-fast-image-v2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangzhi17/react-native-fast-image-v2.git"
+  },
+  "license": "(MIT AND Apache-2.0)",
+  "author": "Zhi Wang <wangzhi0114@163.com>",
+  "files": [
+    "android",
+    "!android/build",
+    "ios",
+    "!ios/build",
+    "RNFastImage.podspec"
+  ],
+
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^17 || ^18",
+    "react-native": ">=0.60.0"
+  },
+  "codegenConfig": {
+    "name": "FastImageSpecs",
+    "type": "all",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.dylanvann.fastimage"
+    }
+  }
+}
