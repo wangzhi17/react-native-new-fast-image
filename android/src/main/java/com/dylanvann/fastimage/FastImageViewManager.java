@@ -77,11 +77,13 @@ class FastImageViewManager extends SimpleViewManager<FastImageViewWithUrl> imple
     }
 
     @Override
+    @ReactProp(name = "source")
     public void setSource(FastImageViewWithUrl view, @Nullable ReadableMap source) {
         view.setSource(source);
     }
 
     @Override
+    @ReactProp(name = "defaultSource")
     public void setDefaultSource(FastImageViewWithUrl view, @Nullable String source) {
         view.setDefaultSource(
                 ResourceDrawableIdHelper.getInstance()
@@ -89,6 +91,7 @@ class FastImageViewManager extends SimpleViewManager<FastImageViewWithUrl> imple
     }
 
     @Override
+    @ReactProp(name = "tintColor", customType = "Color")
     public void setTintColor(FastImageViewWithUrl view, @Nullable Integer color) {
         if (color == null) {
             view.clearColorFilter();
@@ -98,6 +101,7 @@ class FastImageViewManager extends SimpleViewManager<FastImageViewWithUrl> imple
     }
 
     @Override
+    @ReactProp(name = "resizeMode")
     public void setResizeMode(FastImageViewWithUrl view, String resizeMode) {
         final FastImageViewWithUrl.ScaleType scaleType = FastImageViewConverter.getScaleType(resizeMode);
         view.setScaleType(scaleType);
