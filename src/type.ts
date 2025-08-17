@@ -139,6 +139,6 @@ export interface FastImageStaticProperties {
   priority: typeof priority;
   cacheControl: typeof cacheControl;
   preload: (sources: Source[]) => void;
-  clearMemoryCache: () => Promise<void>;
-  clearDiskCache: () => Promise<void>;
+  clearMemoryCache: () => void;
+  clearDiskCache: () => void;
 }

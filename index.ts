@@ -11,10 +11,10 @@ FastImage.cacheControl = cacheControl;
 
 FastImage.priority = priority;
 
-FastImage.clearMemoryCache = () => FastImageModule.clearMemoryCache().then();
+FastImage.clearMemoryCache = () => FastImageModule.clearMemoryCache();
 
-FastImage.clearDiskCache = () => FastImageModule.clearDiskCache().then();
-FastImage.preload = (sources: Source[]) => FastImageModule.preload(sources).then();
+FastImage.clearDiskCache = () => FastImageModule.clearDiskCache();
+FastImage.preload = (sources: Source[]) => FastImageModule.preload(sources);
 
 export  {FastImageModule}
 export default FastImage;

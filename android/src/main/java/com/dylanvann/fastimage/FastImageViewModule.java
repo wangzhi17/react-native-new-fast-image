@@ -2,32 +2,24 @@ package com.dylanvann.fastimage;
 
 import android.app.Activity;
 
-import androidx.annotation.NonNull;
-
 import com.bumptech.glide.Glide;
-import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 
 public class FastImageViewModule extends NativeFastImageSpec {
 
-    private final String REACT_CLASS = "FastImageViewModule";
+    private final ReactApplicationContext reactApplicationContext;
 
     FastImageViewModule(ReactApplicationContext reactContext) {
         super(reactContext);
+        this.reactApplicationContext = reactContext;
     }
 
-    @NonNull
     @Override
-    public String getName() {
-        return REACT_CLASS;
-    }
-
-    public void clearMemoryCache(Promise promise) {
-        final Activity activity = getCurrentActivity();
+    public void clearMemoryCache() {
+        final Activity activity = reactApplicationContext.getCurrentActivity();
         if (activity == null) {
-            promise.resolve(true);
             return;
         }
 
@@ -35,27 +27,24 @@ public class FastImageViewModule extends NativeFastImageSpec {
             @Override
             public void run() {
                 Glide.get(activity.getApplicationContext()).clearMemory();
-                promise.resolve(true);
             }
         });
     }
 
-    public void clearDiskCache(Promise promise) {
-        final Activity activity = getCurrentActivity();
+    @Override
+    public void clearDiskCache() {
+        final Activity activity = reactApplicationContext.getCurrentActivity();
         if (activity == null) {
-            promise.resolve(true);
             return;
         }
 
         Glide.get(activity.getApplicationContext()).clearDiskCache();
-        promise.resolve(true);
     }
 
     @Override
-    public void preload(ReadableArray sources, Promise promise) {
-        final Activity activity = getCurrentActivity();
+    public void preload(ReadableArray sources) {
+        final Activity activity = reactApplicationContext.getCurrentActivity();
         if (activity == null) {
-            promise.resolve(true);
             return;
         }
         activity.runOnUiThread(new Runnable() {
@@ -78,7 +67,6 @@ public class FastImageViewModule extends NativeFastImageSpec {
                             )
                             .apply(FastImageViewConverter.getOptions(activity, imageSource, source))
                             .preload();
-                    promise.resolve(true);
                 }
             }
         });

@@ -4,11 +4,11 @@ import { Source } from "../type";
 
 export interface Spec extends TurboModule {
 
-  clearMemoryCache(): Promise<boolean>;
+  clearMemoryCache(): void;
 
-  clearDiskCache(): Promise<boolean>;
+  clearDiskCache(): void;
 
-  preload(sources: Source[]): Promise<boolean>;
+  preload(sources: Source[]): void;
 
 }
 
